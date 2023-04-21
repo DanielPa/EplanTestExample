@@ -5,12 +5,15 @@ namespace IntegrationTestsNUnit
   [TestFixture, SingleThreaded]
   public class NunitTestBase
   {
+    private const string VERSION = "2.9";
+    private const string VARIANT = "Electric P8";
+    
     private EplanApplicationWrapper _app;
 
     [OneTimeSetUp]
     public void StartEplan()
     {
-      _app = new EplanApplicationWrapper();
+      _app = new EplanApplicationWrapper(VERSION, VARIANT);
     }
 
     [OneTimeTearDown]
@@ -71,12 +74,6 @@ namespace IntegrationTestsNUnit
     {
       var projectManagement = new Eplan.EplApi.DataModel.ProjectManager {LockProjectByDefault = false};
       Assert.NotNull(projectManagement);
-    }
-
-    [Test]
-    public void Test1()
-    {
-      Assert.True(true);
     }
   }
 }

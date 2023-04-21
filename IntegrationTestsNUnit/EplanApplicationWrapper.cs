@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Eplan.EplApi.Starter;
 using Eplan.EplApi.System;
 
@@ -19,7 +22,34 @@ namespace IntegrationTestsNUnit
       assemblyResolver.PinToEplan();
       StartEplan(binPath);
     }
-    
+
+    public EplanApplicationWrapper(string version, string variant)
+    {
+      List<EplanData> instancesInstalled = GetInstalledEplanInstances();
+      instancesInstalled = instancesInstalled
+                           .Where(obj =>
+                                    obj.EplanVariant.Equals(variant) &&
+                                    obj.EplanVersion.StartsWith(version))
+                           .OrderBy(obj => obj.EplanVersion)
+                           .ToList();
+      if (!instancesInstalled.Any())
+      {
+        throw new Exception($"EPLAN instance in version {version} not found");
+      }
+
+      string binPath = instancesInstalled.First().EplanPath;
+      binPath = Path.GetDirectoryName(binPath);
+      StartEplan(binPath);
+    }
+
+    private static List<EplanData> GetInstalledEplanInstances()
+    {
+      EplanFinder eplanFinder = new EplanFinder();
+      List<EplanData> eplanVersions = new List<EplanData>();
+      eplanFinder.GetInstalledEplanVersions(ref eplanVersions, true);
+      return eplanVersions;
+    }
+
     private void StartEplan(string binPath)
     {
       _app = new EplApplication();
