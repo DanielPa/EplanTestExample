@@ -9,18 +9,23 @@ namespace IntegrationTestsNUnit
 {
   public class EplanApplicationWrapper
   {
-    EplApplication _app;
+    private EplApplication _app;
 
     public EplanApplicationWrapper()
     {
       var finder = new EplanFinder();
       var binPath = finder.SelectEplanVersion(true);
+      PinToEplan(binPath);
+      StartEplan(binPath);
+    }
+
+    private static void PinToEplan(string binPath)
+    {
       var assemblyResolver = new AssemblyResolver();
       assemblyResolver.SetEplanBinPath(binPath);
       var platformBinPath = assemblyResolver.GetPlatformBinPath();
       Environment.CurrentDirectory = platformBinPath;
       assemblyResolver.PinToEplan();
-      StartEplan(binPath);
     }
 
     public EplanApplicationWrapper(string version, string variant)
@@ -39,6 +44,7 @@ namespace IntegrationTestsNUnit
 
       string binPath = instancesInstalled.First().EplanPath;
       binPath = Path.GetDirectoryName(binPath);
+      PinToEplan(binPath);
       StartEplan(binPath);
     }
 
