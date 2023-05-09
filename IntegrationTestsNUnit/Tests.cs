@@ -7,14 +7,14 @@ namespace IntegrationTestsNUnit
   [TestFixture("2023", "Electric P8", "API")]
   [SingleThreaded]
   [Apartment(ApartmentState.STA)]
-  public class NunitTestBase
+  public class Tests
   {
     private readonly string _version;
     private readonly string _variant;
     private readonly string _systemConfiguration;
     private EplanApplicationWrapper _app;
 
-    public NunitTestBase(string version, string variant, string systemConfiguration)
+    public Tests(string version, string variant, string systemConfiguration)
     {
       _version = version;
       _variant = variant;
