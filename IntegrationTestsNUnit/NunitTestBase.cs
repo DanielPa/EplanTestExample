@@ -51,7 +51,7 @@ namespace IntegrationTestsNUnit
       var projectManagement = new Eplan.EplApi.HEServices.ProjectManagement();
       Assert.DoesNotThrow(() =>
                             projectManagement.LoadDirectory(
-                              @"\\Mac\Home\Documents\EPLAN\2.9.4\Dev\Data\Projekte\ibKastl", true));
+                              @"\\Mac\Home\Documents\EPLAN\2.9\Data\Projekte\ibKastl", true));
     }
 
     [Test]
