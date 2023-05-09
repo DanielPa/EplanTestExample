@@ -1,19 +1,30 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 
 namespace IntegrationTestsNUnit
 {
-  [TestFixture, SingleThreaded]
+  [TestFixture("2.9", "Electric P8", "API")]
+  [TestFixture("2023", "Electric P8", "API")]
+  [SingleThreaded]
+  [Apartment(ApartmentState.STA)]
   public class NunitTestBase
   {
-    private const string VERSION = "2.9";
-    private const string VARIANT = "Electric P8";
-    
+    private readonly string _version;
+    private readonly string _variant;
+    private readonly string _systemConfiguration;
     private EplanApplicationWrapper _app;
+
+    public NunitTestBase(string version, string variant, string systemConfiguration)
+    {
+      _version = version;
+      _variant = variant;
+      _systemConfiguration = systemConfiguration;
+    }
 
     [OneTimeSetUp]
     public void StartEplan()
     {
-      _app = new EplanApplicationWrapper(VERSION, VARIANT);
+      _app = new EplanApplicationWrapper(_version, _variant, _systemConfiguration);
     }
 
     [OneTimeTearDown]
