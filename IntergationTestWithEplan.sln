@@ -2,18 +2,21 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTestsNUnit", "IntegrationTestsNUnit\IntegrationTestsNUnit.csproj", "{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkEplan", "BenchmarkEplan\BenchmarkEplan.csproj", "{8172DB46-69A4-48B6-87AB-33878B97FFD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
-		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Debug|x64.ActiveCfg = Debug|x64
 		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Debug|x64.Build.0 = Debug|x64
-		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Release|x64.ActiveCfg = Release|x64
+		{FF89ED76-CB06-47E4-B3F5-0CAABFB1AE94}.Release|x64.Build.0 = Release|x64
+		{8172DB46-69A4-48B6-87AB-33878B97FFD5}.Release|x64.ActiveCfg = Release|x64
+		{8172DB46-69A4-48B6-87AB-33878B97FFD5}.Release|x64.Build.0 = Release|x64
+		{8172DB46-69A4-48B6-87AB-33878B97FFD5}.Debug|x64.ActiveCfg = Debug|x64
+		{8172DB46-69A4-48B6-87AB-33878B97FFD5}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,15 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="EPLAN 2.9" type="RunExe" factoryName=".NET Executable">
+    <option name="EXE_PATH" value="C:/Program Files/EPLAN/Platform/2.9.4/Bin/EPLAN.exe" />
+    <option name="PROGRAM_PARAMETERS" value="/Variant:&quot;Electric P8&quot; /SystemConfiguration:&quot;API&quot;" />
+    <option name="WORKING_DIRECTORY" value="C:/Program Files/EPLAN/Platform/2.9.4/Bin" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <option name="USE_MONO" value="0" />
+    <option name="RUNTIME_ARGUMENTS" value="" />
+    <option name="RUNTIME_TYPE" value="netfw" />
+    <method v="2">
+      <option name="Build" default="false" projectName="BenchmarkEplan" projectPath="file://$PROJECT_DIR$/BenchmarkEplan/BenchmarkEplan.csproj" />
+    </method>
+  </configuration>
+</component>
