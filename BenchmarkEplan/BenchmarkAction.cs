@@ -28,7 +28,7 @@ namespace BenchmarkEplan
 
             benchmark.Run();
             
-            var filePath = new PathInfo().Documents + $@"\Benchmark_{DateTime.Now}.txt";
+            var filePath = new PathInfo().Documents + $@"\Benchmark_{DateTime.Now:yyyyMMddhhmm}.txt";
             benchmark.Report(filePath);
 
             if (File.Exists(filePath))
